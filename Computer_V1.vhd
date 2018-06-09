@@ -589,3 +589,103 @@ Begin
 							 );
 
 End STRUCT;
+
+
+---------------32 bit CLA adder---------------------
+
+Library IEEE;
+use IEEE.STD_LOGIC_1164.all;
+use IEEE.STD_LOGIC_MISC.all;
+use IEEE.STD_LOGIC_ARITH.all;
+
+Entity Adder32 is
+	Port(
+			A:	In	std_logic_vector(31 downto 0);
+			B:	In	std_logic_vector(31 downto 0);
+			S: 	Out	std_logic_vector(31 downto 0);
+			C_i:In	std_logic;
+			C_o:Out std_logic
+		);
+End Adder32;
+
+Architecture STRUCT of Adder32 is
+
+	Component Adder4 is
+		Port(
+				C_i:	In	std_logic;
+				A:		In 	std_logic_vector(3 downto 0);
+				B: 		In 	std_logic_vector(3 downto 0);
+				S:		Out	std_logic_vector(3 downto 0);
+				C_o:	Out	std_logic
+			);
+	End Component;
+
+	Signal c0, c1, c2, c3, c4, c5, c6: std_logic;
+
+Begin
+
+	U_Adder4_0: Adder4 Port Map(
+							   		C_i	=> C_i,
+									A	=> A(3 downto 0),
+									B	=> B(3 downto 0),
+									S	=> S(3 downto 0),
+									C_o	=> c0
+							   );
+
+	U_Adder4_1: Adder4 Port Map(
+							   		C_i	=> c0,
+									A	=> A(7 downto 4),
+									B	=> B(7 downto 4),
+									S	=> S(7 downto 4),
+									C_o	=> c1
+							   );
+
+	U_Adder4_2: Adder4 Port Map(
+							   		C_i	=> c1,
+									A	=> A(11 downto 8),
+									B	=> B(11 downto 8),
+									S	=> S(11 downto 8),
+									C_o	=> c2
+							   );
+
+	U_Adder4_3: Adder4 Port Map(
+							   		C_i	=> c2,
+									A	=> A(15 downto 12),
+									B	=> B(15 downto 12),
+									S	=> S(15 downto 12),
+									C_o	=> c3
+							   );
+
+	U_Adder4_4: Adder4 Port Map(
+							   		C_i	=> c3,
+									A	=> A(19 downto 16),
+									B	=> B(19 downto 16),
+									S	=> S(19 downto 16),
+									C_o	=> c4
+							   );
+
+	U_Adder4_5: Adder4 Port Map(
+							   		C_i	=> c4,
+									A	=> A(23 downto 20),
+									B	=> B(23 downto 20),
+									S	=> S(23 downto 20),
+									C_o	=> c5
+							   );
+
+	U_Adder4_6: Adder4 Port Map(
+							   		C_i	=> c5,
+									A	=> A(27 downto 24),
+									B	=> B(27 downto 24),
+									S	=> S(27 downto 24),
+									C_o	=> c6
+								);
+
+	U_Adder4_7: Adder4 Port Map(
+							   		C_i	=> c6,
+									A	=> A(31 downto 28),
+									B	=> B(31 downto 28),
+									S	=> S(31 downto 28),
+									C_o	=> C_o
+							   );
+							
+End STRUCT;
