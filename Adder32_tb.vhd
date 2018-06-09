@@ -28,7 +28,7 @@ Architecture behav of tb is
 
 Begin
 
-	uut: Adder4 Port Map(
+	uut: Adder32 Port Map(
 								C_i => c_i,
 								A	=> test_vectA,
 								B	=> test_vectB,
