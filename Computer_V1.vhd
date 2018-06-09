@@ -73,7 +73,7 @@ Architecture BEHAVIORAL of XOR2 is
 Begin
 	P: Process(A, B)
 	Begin
-		Y <= A or B after 2.4 ns;
+		Y <= A xor B after 2.4 ns;
 	End Process P;
 End BEHAVIORAL;
 
@@ -243,11 +243,11 @@ Entity Adder is
 			G: Out std_logic;
 			P: Out std_logic
 		);
-End FullAdder;
+End Adder;
 
 Architecture STRUCT of Adder is
 		
-	Component 2XOR is
+	Component XOR2 is
 		Port(
 				A: In std_logic;
 				B: In std_logic;
@@ -276,13 +276,13 @@ Architecture STRUCT of Adder is
 
 Begin
 
-	U_2XOR_1: 2XOR Port Map(
+	U_2XOR_1: XOR2 Port Map(
 						   		A => A,
 								B => B,
 								Y => s1
 						   );
 
-	U_2XOR_2: 2XOR Port Map(
+	U_2XOR_2: XOR2 Port Map(
 						   		A => s1,
 								B => C_in,
 								Y => S
@@ -297,7 +297,7 @@ Begin
 	U_AND2_1: AND2 Port Map(
 						   		A => A,
 								B => B,
-								Y => P
+								Y => G
 						   );
 End STRUCT;
 
@@ -444,7 +444,7 @@ Begin
 								Y => s5
 						   );
 
-	U_AND2_3: Port Map(
+	U_AND2_3: AND2 Port Map(
 					  			A => P(2),
 								B => G(1),
 								Y => s6
@@ -458,7 +458,7 @@ Begin
 								Y => C(2)
 						 );
 
-	U_AND5_1: Port Map(
+	U_AND5_1: AND5 Port Map(
 					  			A => C_i,
 								B => P(0),
 								C => P(1),
@@ -467,7 +467,7 @@ Begin
 								Y => s7
 					  );
 
-	U_AND4_2: Port Map(
+	U_AND4_2: AND4 Port Map(
 					  			A => G(0),
 								B => P(1),
 								C => P(2),
@@ -475,20 +475,20 @@ Begin
 								Y => s8
 					  );
 
-	U_AND3_3: Port Map(
+	U_AND3_3: AND3 Port Map(
 					  			A => G(1),
 								B => P(2),
 								C => P(3),
 								Y => s9
 					  );
 
-	U_AND2_4: Port Map(
+	U_AND2_4: AND2 Port Map(
 					  			A => G(2),
 								B => P(3),
 								Y => sA
 					  );
 
-	U_OR5_1: Port Map(
+	U_OR5_1: OR5 Port Map(
 					 			A => s7,
 								B => s8,
 								C => s9,
@@ -522,23 +522,23 @@ Architecture STRUCT of Adder4 is
 				C_i:	In	std_logic;
 				G:		In 	std_logic_vector(3 downto 0);
 				P:		In 	std_logic_vector(3 downto 0);
-				C:		Out std_logic_vector(3 downto 0);
+				C:		Out std_logic_vector(3 downto 0)
 			);
 	End Component;
 
 	Component Adder is
 		Port(
-				C_i:	In	std_logic;
+				C_in:	In	std_logic;
 				A:		In	std_logic;
 				B:		In	std_logic;
 				S:		Out	std_logic;
 				G:		Out std_logic;
-				P:		Out std_logic;
+				P:		Out std_logic
 			);
 	End Component;
 
 	Signal p_sig, g_sig:	std_logic_vector(3 downto 0);
-	Signal c0, c1, c2, c3:	std_logic;
+	Signal c0, c1, c2:	std_logic;
 
 Begin
 
@@ -549,11 +549,11 @@ Begin
 									C(0) 	=> c0,
 									C(1)	=> c1,
 									C(2)	=> c2,
-									C(3)	=> c3
+									C(3)	=> C_o
 								 );
 
 	U_Adder_0: Adder Port Map(
-							 		C_i		=> C_i,
+							 		C_in		=> C_i,
 									A		=> A(0),
 									B		=> B(0),
 									S		=> S(0),
@@ -562,7 +562,7 @@ Begin
 							 );
 
 	U_Adder_1: Adder Port Map(
-							 		C_i		=> c0,
+							 		C_in		=> c0,
 									A		=> A(1),
 									B		=> B(1),
 									S		=> S(1),
@@ -571,7 +571,7 @@ Begin
 							 );
 
 	U_Adder_2: Adder Port Map(
-							 		C_i		=> c1,
+							 		C_in		=> c1,
 									A		=> A(2),
 									B		=> B(2),
 									S		=> S(2),
@@ -580,7 +580,7 @@ Begin
 							 );
 	
 	U_Adder_3: Adder Port Map(
-							 		C_i		=> c2,
+							 		C_in		=> c2,
 									A		=> A(3),
 									B		=> B(3),
 									S		=> S(3),

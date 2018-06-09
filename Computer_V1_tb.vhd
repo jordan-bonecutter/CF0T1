@@ -23,15 +23,13 @@ Architecture behav of tb is
 	End Component;
 
 	signal test_vectA, test_vectB: std_logic_vector(3 downto 0);
-	test_vectA <= "0000";
-	test_vectB <= "0000";
 	signal out_sig: std_logic_vector(3 downto 0);
-	signal c_o:		std_logic;
+	signal c_o, c_i:		std_logic;
 
 Begin
 
 	uut: Adder4 Port Map(
-								C_i => '0',
+								C_i => c_i,
 								A	=> test_vectA,
 								B	=> test_vectB,
 								S 	=> out_sig,
@@ -41,17 +39,31 @@ Begin
 	ttb: PROCESS
 	BEGIN
 
+    c_i <= '0';
+
+    test_vectA <= "0000";
+	test_vectB <= "0000";
+
 	wait for 200 ns;
 
-	test_vectA <= "1010";
-	test_vectB <= "0101";
+	test_vectA <= "0001";
+	test_vectB <= "0001";
 
 	wait for 200 ns;
 	
 	test_vectA <= "0010";
-	test_vectB <= "0111";
+	test_vectB <= "0010";
 
 	wait for 200 ns;
+	
+	test_vectA <= "0111";
+	test_vectB <= "0010";
+	
+	wait for 200ns;
+	
+	test_vectA <= "1011";
+	test_vectB <= "0001";
+	
 	End Process;
 
 End;
