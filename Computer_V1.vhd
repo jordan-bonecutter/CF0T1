@@ -8,6 +8,28 @@ use IEEE.STD_LOGIC_1164.all;
 use IEEE.STD_LOGIC_MISC.all;
 use IEEE.STD_LOGIC_ARITH.all;
 
+----------------1 bit not gate----------------------
+
+Library IEEE;
+use IEEE.STD_LOGIC_1164.all;
+use IEEE.STD_LOGIC_MISC.all;
+use IEEE.STD_LOGIC_ARITH.all;
+
+Entity NOT1 is
+	Port(
+			A: In std_logic;
+			Y: Out std_logic
+		);
+End NOT1;
+
+Architecture BEHAVIORAL of NOT1 is
+Begin
+	P: Process(A)
+	Begin
+		Y <= not A 1 ns;
+	End Process P;
+End BEHAVIORAL;
+
 ----------------2 bit and gate----------------------
 
 Library IEEE;
@@ -688,4 +710,190 @@ Begin
 									C_o	=> C_o
 							   );
 							
+End STRUCT;
+
+---------------4 bit decoder------------------------
+
+Library IEEE;
+use IEEE.STD_LOGIC_1164.all;
+use IEEE.STD_LOGIC_MISC.all;
+use IEEE.STD_LOGIC_ARITH.all;
+
+Entity Decoder4 is
+	Port(
+			V_in:	In	std_logic_vector(3 downto 0);
+			V_o:	Out	std_logic_vector(15 downto 0);
+		);
+End Decoder4;
+
+Architecture STRUCT of Decoder4 is
+
+	Component AND4 is
+		Port(
+				A: In std_logic;
+				B: In std_logic;
+				C: In std_logic;
+				D: In std_logic;
+				Y: Out std_logic
+			);
+	End Component;
+
+	Component NOT1 is
+		Port(
+				A:	In	std_logic;
+				Y:	Out	std_logic
+			);
+	End Component;
+
+	Signal v0n, v1n, v2n, v3n:	std_logic;
+
+Begin
+
+	U_NOT1_0:	NOT1 Port Map(
+						   		A	=> V_in(0),
+								Y	=> v0n
+						   );
+
+	U_NOT1_1:	NOT1 Port Map(
+						   		A	=> V_in(1),
+								Y	=> v1n
+						   );
+	
+	U_NOT1_2:	NOT1 Port Map(
+						   		A	=> V_in(2),
+								Y	=> v2n
+						   );
+
+	U_NOT1_3:	NOT1 Port Map(
+						   		A	=> V_in(3),
+								Y	=> v3n
+						   );
+
+	U_AND4_0:	AND4 Port Map(
+						   		A	=> v0n,
+								B	=> v1n,
+								C	=> v2n,
+								D	=> v3n,
+								Y	=> V_o(0)
+						   );
+
+	U_AND4_1:	AND4 Port Map(
+						   		A	=> V_in(0),
+								B	=> v1n,
+								C	=> v2n,
+								D	=> v3n,
+								Y	=> V_o(1)
+						   );
+
+	U_AND4_2:	AND4 Port Map(
+						   		A	=> v0n,
+								B	=> V_in(1),
+								C	=> v2n,
+								D	=> v3n,
+								Y	=> V_o(2)
+						   );
+
+	U_AND4_3:	AND4 Port Map(
+						   		A	=> V_in(0),
+								B	=> V_in(1),
+								C	=> v2n,
+								D	=> v3n,
+								Y	=> V_o(3)
+						   );
+
+	U_AND4_4:	AND4 Port Map(
+						   		A	=> v0n,
+								B	=> v1n,
+								C	=> V_in(2),
+								D	=> v3n,
+								Y	=> V_o(4)
+						   );
+
+	U_AND4_5:	AND4 Port Map(
+						   		A	=> V_in(0),
+								B	=> v1n,
+								C	=> V_in(2),
+								D	=> v3n,
+								Y	=> V_o(5)
+						   );
+
+	U_AND4_6:	AND4 Port Map(
+						   		A	=> v0n, 
+								B	=> V_in(1),
+								C	=> V_in(2),
+								D	=> v3n,
+								Y	=> V_o(6)
+						   );
+
+	U_AND4_7:	AND4 Port Map(
+						   		A	=> V_in(0), 
+								B	=> V_in(1),
+								C	=> V_in(2),
+								D	=> v3n,
+								Y	=> V_o(7)
+						   );
+	
+	U_AND4_8:	AND4 Port Map(
+						   		A	=> v0n, 
+								B	=> v1n,
+								C	=> v2n,
+								D	=> V_in(3),
+								Y	=> V_o(8)
+						   );
+	
+	U_AND4_9:	AND4 Port Map(
+						   		A	=> V_in(0), 
+								B	=> v1n,
+								C	=> v2n,
+								D	=> V_in(3),
+								Y	=> V_o(9)
+						   );
+	
+	U_AND4_A:	AND4 Port Map(
+						   		A	=> v0n, 
+								B	=> V_in(1),
+								C	=> v2n,
+								D	=> V_in(3),
+								Y	=> V_o(10)
+						   );
+	
+	U_AND4_B:	AND4 Port Map(
+						   		A	=> V_in(0), 
+								B	=> V_in(1),
+								C	=> v2n,
+								D	=> V_in(3),
+								Y	=> V_o(11)
+						   );
+	
+	U_AND4_C:	AND4 Port Map(
+						   		A	=> v0n,
+								B	=> v1n,
+								C	=> V_in(2),
+								D	=> V_in(3),
+								Y	=> V_o(12)
+						   );
+	
+	U_AND4_D:	AND4 Port Map(
+						   		A	=> V_in(0),
+								B	=> v1n,
+								C	=> V_in(2),
+								D	=> V_in(3),
+								Y	=> V_o(13)
+						   );
+	
+	U_AND4_E:	AND4 Port Map(
+						   		A	=> v0n, 
+								B	=> V_in(1),
+								C	=> V_in(2),
+								D	=> V_in(3),
+								Y	=> V_o(14)
+						   );
+	
+	U_AND4_F:	AND4 Port Map(
+						   		A	=> V_in(0), 
+								B	=> V_in(1),
+								C	=> V_in(2),
+								D	=> V_in(3),
+								Y	=> V_o(15)
+						   );
 End STRUCT;
