@@ -2284,3 +2284,451 @@ Begin
 								D	=> t9A
 								Y	=> V_out(15)
 						 );
+	
+	-- 11th bit --
+
+	U_AND2_88:	AND2 Port Map(
+						   		A	=> V_in(0),
+								B	=> smask(16),
+								Y	=> t9B
+						   );
+
+	U_AND2_89:	AND2 Port Map(
+						   		A	=> V_in(1),
+								B	=> smask(15),
+								Y	=> t9C
+						   );
+
+	U_AND2_8A: 	AND2 Port Map(
+								A	=> V_in(2),
+								B	=> smask(14),
+								Y	=> t9D
+							);
+
+	U_AND2_8B:	AND2 Port Map(
+						   		A	=> V_in(3),
+								B	=> smask(13),
+								Y	=> t9E
+						   );
+
+	U_AND2_8C: 	AND2 Port Map(
+								A	=> V_in(4),
+								B	=> smask(12),
+								Y	=> t9F
+							);
+
+	U_AND2_8D:	AND2 Port Map(
+								A	=> V_in(5),
+								B	=> smask(11),
+								Y	=> t100
+							);
+
+	U_AND2_8E:	AND2 Port Map(
+								A	=> V_in(6),
+								B	=> smask(10),
+								Y	=> t101
+							);
+
+	U_AND2_8F:	AND2 Port Map(
+								A	=> V_in(7),
+								B	=> smask(9),
+								Y	=> t102
+							);
+
+	U_AND2_90:	AND2 Port Map(
+								A	=> V_in(8),
+								B	=> smask(8),
+								Y	=> t103
+							);
+	
+	U_AND2_91:	AND2 Port Map(
+								A	=> V_in(9),
+								B	=> smask(7),
+								Y	=> t104
+							);
+
+	U_AND2_92:	AND2 Port Map(
+						   		A	=> V_in(10),
+								B	=> smask(6),
+								Y	=> t105
+						   );
+
+	U_AND2_93:	AND2 Port Map(
+								A	=> V_in(11),
+								B	=> smask(5),
+								Y	=> t106
+							);
+
+	U_AND2_94:	AND2 Port Map(
+								A	=> V_in(12),
+								B	=> smask(4),
+								Y	=> t107
+							);
+
+	U_AND2_95:	AND2 Port Map(
+								A	=> V_in(13),
+								B	=> smask(3),
+								Y	=> t108
+							);
+
+	U_AND2_96:	AND2 Port Map(
+								A	=> V_in(14),
+								B	=> smask(2),
+								Y	=> t109
+							);
+
+	U_AND2_97:	AND2 Port Map(
+								A	=> V_in(15),
+								B	=> smask(1),
+								Y	=> t10A
+							);
+
+	U_AND2_98:	AND2 Port Map(
+								A	=> V_in(16),
+								B	=> smask(0),
+								Y	=> t10B
+							);
+
+	U_OR5_18:	OR5 Port Map(
+						 		A	=> t9B,
+								B	=> t9C,
+								C	=> t9D,
+								D	=> t9E,
+								E	=> t9F,
+								Y	=> t10C
+						 );
+
+	U_OR5_19:	OR5 Port Map(
+						 		A	=> t100,
+								B	=> t101,
+								C	=> t102,
+								D	=> t103,
+								E	=> t104,
+								Y	=> t10D
+						 );
+
+	U_OR5_1A:	OR5 Port Map(
+						 		A	=> t105,
+								B	=> t106,
+								C	=> t107,
+								D	=> t108,
+								E	=> t109,
+								Y	=> t10E
+						 );
+
+	U_OR5_1B:	OR5 Port Map(
+						 		A	=> t10A,
+								B	=> t10B,
+								C	=> t10C,
+								D	=> t10D,
+								E	=> t10E,
+								Y	=> V_out(16)
+						 );
+
+	-- 11th bit --
+
+	U_AND2_99:	AND2 Port Map(
+						   		A	=> V_in(0),
+								B	=> smask(17),
+								Y	=> t10F
+						   );
+
+	U_AND2_9A:	AND2 Port Map(
+						   		A	=> V_in(1),
+								B	=> smask(16),
+								Y	=> t110
+						   );
+
+	U_AND2_9B: 	AND2 Port Map(
+								A	=> V_in(2),
+								B	=> smask(15),
+								Y	=> t111
+							);
+
+	U_AND2_9C:	AND2 Port Map(
+						   		A	=> V_in(3),
+								B	=> smask(14),
+								Y	=> t112
+						   );
+
+	U_AND2_9D: 	AND2 Port Map(
+								A	=> V_in(4),
+								B	=> smask(13),
+								Y	=> t113
+							);
+
+	U_AND2_9E:	AND2 Port Map(
+								A	=> V_in(5),
+								B	=> smask(12),
+								Y	=> t114
+							);
+
+	U_AND2_9F:	AND2 Port Map(
+								A	=> V_in(6),
+								B	=> smask(11),
+								Y	=> t115
+							);
+
+	U_AND2_100:	AND2 Port Map(
+								A	=> V_in(7),
+								B	=> smask(10),
+								Y	=> t116
+							);
+
+	U_AND2_101:	AND2 Port Map(
+								A	=> V_in(8),
+								B	=> smask(9),
+								Y	=> t117
+							);
+	
+	U_AND2_102:	AND2 Port Map(
+								A	=> V_in(9),
+								B	=> smask(8),
+								Y	=> t118
+							);
+
+	U_AND2_103:	AND2 Port Map(
+						   		A	=> V_in(10),
+								B	=> smask(7),
+								Y	=> t119
+						   );
+
+	U_AND2_104:	AND2 Port Map(
+								A	=> V_in(11),
+								B	=> smask(6),
+								Y	=> t11A
+							);
+
+	U_AND2_105:	AND2 Port Map(
+								A	=> V_in(12),
+								B	=> smask(5),
+								Y	=> t11B
+							);
+
+	U_AND2_106:	AND2 Port Map(
+								A	=> V_in(13),
+								B	=> smask(4),
+								Y	=> t11C
+							);
+
+	U_AND2_107:	AND2 Port Map(
+								A	=> V_in(14),
+								B	=> smask(3),
+								Y	=> t11D
+							);
+
+	U_AND2_108:	AND2 Port Map(
+								A	=> V_in(15),
+								B	=> smask(2),
+								Y	=> t11E
+							);
+
+	U_AND2_109:	AND2 Port Map(
+								A	=> V_in(16),
+								B	=> smask(1),
+								Y	=> t11F
+							);
+
+	U_AND2_10A:	AND2 Port Map(
+							 	A	=> V_in(17),
+								B	=> smask(0),
+								Y	=> t120
+							 );
+
+	U_OR5_1C:	OR5 Port Map(
+						 		A	=> t10F,
+								B	=> t110,
+								C	=> t111,
+								D	=> t112,
+								E	=> t113,
+								Y	=> t121
+						 );
+
+	U_OR5_1D:	OR5 Port Map(
+						 		A	=> t114,
+								B	=> t115,
+								C	=> t116,
+								D	=> t117,
+								E	=> t118,
+								Y	=> t122
+						 );
+
+	U_OR5_1E:	OR5 Port Map(
+						 		A	=> t119,
+								B	=> t11A,
+								C	=> t11B,
+								D	=> t11C,
+								E	=> t11D,
+								Y	=> t123
+						 );
+
+	U_OR5_1F:	OR5 Port Map(
+						 		A	=> t11E,
+								B	=> t11F,
+								C	=> t120,
+								D	=> t121,
+								E	=> t122,
+								Y	=> t124
+						 );
+
+	U_OR2_4:	OR2 Port Map(
+						 		A	=> t123,
+								B	=> t124,
+								Y	=> V_out(17)
+						 );
+
+	-- 12th bit --
+
+	U_AND2_10B:	AND2 Port Map(
+						   		A	=> V_in(0),
+								B	=> smask(17),
+								Y	=> t10F
+						   );
+
+	U_AND2_10C:	AND2 Port Map(
+						   		A	=> V_in(1),
+								B	=> smask(16),
+								Y	=> t110
+						   );
+
+	U_AND2_10D:	AND2 Port Map(
+								A	=> V_in(2),
+								B	=> smask(15),
+								Y	=> t111
+							);
+
+	U_AND2_10E:	AND2 Port Map(
+						   		A	=> V_in(3),
+								B	=> smask(14),
+								Y	=> t112
+						   );
+
+	U_AND2_10F:	AND2 Port Map(
+								A	=> V_in(4),
+								B	=> smask(13),
+								Y	=> t113
+							);
+
+	U_AND2_110:	AND2 Port Map(
+								A	=> V_in(5),
+								B	=> smask(12),
+								Y	=> t114
+							);
+
+	U_AND2_111:	AND2 Port Map(
+								A	=> V_in(6),
+								B	=> smask(11),
+								Y	=> t115
+							);
+
+	U_AND2_112:	AND2 Port Map(
+								A	=> V_in(7),
+								B	=> smask(10),
+								Y	=> t116
+							);
+
+	U_AND2_113:	AND2 Port Map(
+								A	=> V_in(8),
+								B	=> smask(9),
+								Y	=> t117
+							);
+	
+	U_AND2_114:	AND2 Port Map(
+								A	=> V_in(9),
+								B	=> smask(8),
+								Y	=> t118
+							);
+
+	U_AND2_115:	AND2 Port Map(
+						   		A	=> V_in(10),
+								B	=> smask(7),
+								Y	=> t119
+						   );
+
+	U_AND2_116:	AND2 Port Map(
+								A	=> V_in(11),
+								B	=> smask(6),
+								Y	=> t11A
+							);
+
+	U_AND2_117:	AND2 Port Map(
+								A	=> V_in(12),
+								B	=> smask(5),
+								Y	=> t11B
+							);
+
+	U_AND2_118:	AND2 Port Map(
+								A	=> V_in(13),
+								B	=> smask(4),
+								Y	=> t11C
+							);
+
+	U_AND2_119:	AND2 Port Map(
+								A	=> V_in(14),
+								B	=> smask(3),
+								Y	=> t11D
+							);
+
+	U_AND2_11A:	AND2 Port Map(
+								A	=> V_in(15),
+								B	=> smask(2),
+								Y	=> t11E
+							);
+
+	U_AND2_11B:	AND2 Port Map(
+								A	=> V_in(16),
+								B	=> smask(1),
+								Y	=> t11F
+							);
+
+	U_AND2_11C:	AND2 Port Map(
+							 	A	=> V_in(17),
+								B	=> smask(0),
+								Y	=> t120
+							 );
+
+	U_AND2_11D:	AND2 Port Map(
+							 	
+							 );
+
+	U_OR5_1C:	OR5 Port Map(
+						 		A	=> t10F,
+								B	=> t110,
+								C	=> t111,
+								D	=> t112,
+								E	=> t113,
+								Y	=> t121
+						 );
+
+	U_OR5_1D:	OR5 Port Map(
+						 		A	=> t114,
+								B	=> t115,
+								C	=> t116,
+								D	=> t117,
+								E	=> t118,
+								Y	=> t122
+						 );
+
+	U_OR5_1E:	OR5 Port Map(
+						 		A	=> t119,
+								B	=> t11A,
+								C	=> t11B,
+								D	=> t11C,
+								E	=> t11D,
+								Y	=> t123
+						 );
+
+	U_OR5_1F:	OR5 Port Map(
+						 		A	=> t11E,
+								B	=> t11F,
+								C	=> t120,
+								D	=> t121,
+								E	=> t122,
+								Y	=> t124
+						 );
+
+	U_OR2_4:	OR2 Port Map(
+						 		A	=> t123,
+								B	=> t124,
+								Y	=> V_out(17)
+						 );
