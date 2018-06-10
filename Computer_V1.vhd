@@ -722,7 +722,7 @@ use IEEE.STD_LOGIC_ARITH.all;
 Entity Decoder4 is
 	Port(
 			V_in:	In	std_logic_vector(4 downto 0);
-			V_o:	Out	std_logic_vector(31 downto 0);
+			V_o:	Out	std_logic_vector(31 downto 0)
 		);
 End Decoder4;
 
@@ -774,7 +774,7 @@ Begin
 						   );
 
 
-	U_AND4_0:	AND4 Port Map(
+	U_AND5_0:	AND5 Port Map(
 						   		A	=> v0n,
 								B	=> v1n,
 								C	=> v2n,
@@ -783,7 +783,7 @@ Begin
 								Y	=> V_o(0)
 						   );
 
-	U_AND4_1:	AND4 Port Map(
+	U_AND5_1:	AND5 Port Map(
 						   		A	=> V_in(0),
 								B	=> v1n,
 								C	=> v2n,
@@ -792,7 +792,7 @@ Begin
 								Y	=> V_o(1)
 						   );
 
-	U_AND4_2:	AND4 Port Map(
+	U_AND5_2:	AND5 Port Map(
 						   		A	=> v0n,
 								B	=> V_in(1),
 								C	=> v2n,
@@ -801,7 +801,7 @@ Begin
 								Y	=> V_o(2)
 						   );
 
-	U_AND4_3:	AND4 Port Map(
+	U_AND5_3:	AND5 Port Map(
 						   		A	=> V_in(0),
 								B	=> V_in(1),
 								C	=> v2n,
@@ -810,7 +810,7 @@ Begin
 								Y	=> V_o(3)
 						   );
 
-	U_AND4_4:	AND4 Port Map(
+	U_AND5_4:	AND5 Port Map(
 						   		A	=> v0n,
 								B	=> v1n,
 								C	=> V_in(2),
@@ -819,7 +819,7 @@ Begin
 								Y	=> V_o(4)
 						   );
 
-	U_AND4_5:	AND4 Port Map(
+	U_AND5_5:	AND5 Port Map(
 						   		A	=> V_in(0),
 								B	=> v1n,
 								C	=> V_in(2),
@@ -828,7 +828,7 @@ Begin
 								Y	=> V_o(5)
 						   );
 
-	U_AND4_6:	AND4 Port Map(
+	U_AND5_6:	AND5 Port Map(
 						   		A	=> v0n, 
 								B	=> V_in(1),
 								C	=> V_in(2),
@@ -837,7 +837,7 @@ Begin
 								Y	=> V_o(6)
 						   );
 
-	U_AND4_7:	AND4 Port Map(
+	U_AND5_7:	AND5 Port Map(
 						   		A	=> V_in(0), 
 								B	=> V_in(1),
 								C	=> V_in(2),
@@ -846,7 +846,7 @@ Begin
 								Y	=> V_o(7)
 						   );
 	
-	U_AND4_8:	AND4 Port Map(
+	U_AND5_8:	AND5 Port Map(
 						   		A	=> v0n, 
 								B	=> v1n,
 								C	=> v2n,
@@ -855,7 +855,7 @@ Begin
 								Y	=> V_o(8)
 						   );
 	
-	U_AND4_9:	AND4 Port Map(
+	U_AND5_9:	AND5 Port Map(
 						   		A	=> V_in(0), 
 								B	=> v1n,
 								C	=> v2n,
@@ -864,7 +864,7 @@ Begin
 								Y	=> V_o(9)
 						   );
 	
-	U_AND4_A:	AND4 Port Map(
+	U_AND5_A:	AND5 Port Map(
 						   		A	=> v0n, 
 								B	=> V_in(1),
 								C	=> v2n,
@@ -873,7 +873,7 @@ Begin
 								Y	=> V_o(10)
 						   );
 	
-	U_AND4_B:	AND4 Port Map(
+	U_AND5_B:	AND5 Port Map(
 						   		A	=> V_in(0), 
 								B	=> V_in(1),
 								C	=> v2n,
@@ -882,7 +882,7 @@ Begin
 								Y	=> V_o(11)
 						   );
 	
-	U_AND4_C:	AND4 Port Map(
+	U_AND5_C:	AND5 Port Map(
 						   		A	=> v0n,
 								B	=> v1n,
 								C	=> V_in(2),
@@ -891,7 +891,7 @@ Begin
 								Y	=> V_o(12)
 						   );
 	
-	U_AND4_D:	AND4 Port Map(
+	U_AND5_D:	AND5 Port Map(
 						   		A	=> V_in(0),
 								B	=> v1n,
 								C	=> V_in(2),
@@ -900,7 +900,7 @@ Begin
 								Y	=> V_o(13)
 						   );
 	
-	U_AND4_E:	AND4 Port Map(
+	U_AND5_E:	AND5 Port Map(
 						   		A	=> v0n, 
 								B	=> V_in(1),
 								C	=> V_in(2),
@@ -909,7 +909,7 @@ Begin
 								Y	=> V_o(14)
 						   );
 	
-	U_AND4_F:	AND4 Port Map(
+	U_AND5_F:	AND5 Port Map(
 						   		A	=> V_in(0), 
 								B	=> V_in(1),
 								C	=> V_in(2),
@@ -918,7 +918,7 @@ Begin
 								Y	=> V_o(15)
 						   );
 
-	U_AND4_10:	AND4 Port Map(
+	U_AND5_10:	AND5 Port Map(
 						   		A	=> v0n,
 								B	=> v1n,
 								C	=> v2n,
@@ -927,7 +927,7 @@ Begin
 								Y	=> V_o(0)
 						   );
 
-	U_AND4_11:	AND4 Port Map(
+	U_AND5_11:	AND5 Port Map(
 						   		A	=> V_in(0),
 								B	=> v1n,
 								C	=> v2n,
@@ -936,7 +936,7 @@ Begin
 								Y	=> V_o(1)
 						   );
 
-	U_AND4_12:	AND4 Port Map(
+	U_AND5_12:	AND5 Port Map(
 						   		A	=> v0n,
 								B	=> V_in(1),
 								C	=> v2n,
@@ -945,7 +945,7 @@ Begin
 								Y	=> V_o(2)
 						   );
 
-	U_AND4_13:	AND4 Port Map(
+	U_AND5_13:	AND5 Port Map(
 						   		A	=> V_in(0),
 								B	=> V_in(1),
 								C	=> v2n,
@@ -954,7 +954,7 @@ Begin
 								Y	=> V_o(3)
 						   );
 
-	U_AND4_14:	AND4 Port Map(
+	U_AND5_14:	AND5 Port Map(
 						   		A	=> v0n,
 								B	=> v1n,
 								C	=> V_in(2),
@@ -963,7 +963,7 @@ Begin
 								Y	=> V_o(4)
 						   );
 
-	U_AND4_15:	AND4 Port Map(
+	U_AND5_15:	AND5 Port Map(
 						   		A	=> V_in(0),
 								B	=> v1n,
 								C	=> V_in(2),
@@ -972,7 +972,7 @@ Begin
 								Y	=> V_o(5)
 						   );
 
-	U_AND4_16:	AND4 Port Map(
+	U_AND5_16:	AND5 Port Map(
 						   		A	=> v0n, 
 								B	=> V_in(1),
 								C	=> V_in(2),
@@ -981,7 +981,7 @@ Begin
 								Y	=> V_o(6)
 						   );
 
-	U_AND4_17:	AND4 Port Map(
+	U_AND5_17:	AND5 Port Map(
 						   		A	=> V_in(0), 
 								B	=> V_in(1),
 								C	=> V_in(2),
@@ -990,7 +990,7 @@ Begin
 								Y	=> V_o(7)
 						   );
 	
-	U_AND4_18:	AND4 Port Map(
+	U_AND5_18:	AND5 Port Map(
 						   		A	=> v0n, 
 								B	=> v1n,
 								C	=> v2n,
@@ -999,7 +999,7 @@ Begin
 								Y	=> V_o(8)
 						   );
 	
-	U_AND4_19:	AND4 Port Map(
+	U_AND5_19:	AND5 Port Map(
 						   		A	=> V_in(0), 
 								B	=> v1n,
 								C	=> v2n,
@@ -1008,7 +1008,7 @@ Begin
 								Y	=> V_o(9)
 						   );
 	
-	U_AND4_1A:	AND4 Port Map(
+	U_AND5_1A:	AND5 Port Map(
 						   		A	=> v0n, 
 								B	=> V_in(1),
 								C	=> v2n,
@@ -1017,7 +1017,7 @@ Begin
 								Y	=> V_o(10)
 						   );
 	
-	U_AND4_1B:	AND4 Port Map(
+	U_AND5_1B:	AND5 Port Map(
 						   		A	=> V_in(0), 
 								B	=> V_in(1),
 								C	=> v2n,
@@ -1026,7 +1026,7 @@ Begin
 								Y	=> V_o(11)
 						   );
 	
-	U_AND4_1C:	AND4 Port Map(
+	U_AND5_1C:	AND5 Port Map(
 						   		A	=> v0n,
 								B	=> v1n,
 								C	=> V_in(2),
@@ -1035,7 +1035,7 @@ Begin
 								Y	=> V_o(12)
 						   );
 	
-	U_AND4_1D:	AND4 Port Map(
+	U_AND5_1D:	AND5 Port Map(
 						   		A	=> V_in(0),
 								B	=> v1n,
 								C	=> V_in(2),
@@ -1044,7 +1044,7 @@ Begin
 								Y	=> V_o(13)
 						   );
 	
-	U_AND4_1E:	AND4 Port Map(
+	U_AND5_1E:	AND5 Port Map(
 						   		A	=> v0n, 
 								B	=> V_in(1),
 								C	=> V_in(2),
@@ -1053,7 +1053,7 @@ Begin
 								Y	=> V_o(14)
 						   );
 	
-	U_AND4_1F:	AND4 Port Map(
+	U_AND5_1F:	AND5 Port Map(
 						   		A	=> V_in(0), 
 								B	=> V_in(1),
 								C	=> V_in(2),
